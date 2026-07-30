@@ -52,21 +52,10 @@ export default function App() {
 
 
   const handleImageClick = () => {
-    // Создаем НОВЫЙ короткий звук на каждый клик, 
-    // чтобы можно было кликать быстро, как из пулемета
-    const audio = new Audio('https://actions.google.com/sounds/v1/animals/dog_barking.ogg');
-    
-    // Начинаем воспроизведение
+    const audio = new Audio('https://www.soundjay.com/animal/cat-meow-1.mp3');
     audio.play().catch(err => {
       console.log('Браузер заблокировал звук:', err);
     });
-
-
-    // Жестко останавливаем ровно через 450 миллисекунд (один гав)
-    setTimeout(() => {
-      audio.pause();
-      audio.src = ''; // Полностью уничтожаем источник, чтобы точно замолчал
-    }, 450);
   };
 
 
@@ -120,7 +109,7 @@ export default function App() {
             {/* Оверлей-подсказка */}
             <div className="absolute inset-0 bg-black/0 group-hover:bg-[#3E2723]/10 transition-colors duration-500 flex items-end justify-center pb-6">
               <span className="text-white opacity-0 group-hover:opacity-100 bg-[#3E2723]/60 px-5 py-2.5 rounded-full text-sm font-medium backdrop-blur-md transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 pointer-events-none">
-                Нажми для лая
+                Нажми для мяу
               </span>
             </div>
           </div>
