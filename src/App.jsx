@@ -56,6 +56,10 @@ export default function App() {
     audio.play().catch(err => {
       console.log('Браузер заблокировал звук:', err);
     });
+    setTimeout(() => {
+      audio.pause();
+      audio.src = '';
+    }, 500);
   };
 
 
@@ -154,7 +158,10 @@ export default function App() {
 
       {/* Подвал */}
       <footer className="mt-12 text-[#8C7A6B] text-xs tracking-wider uppercase font-medium relative z-10">
-        &copy; {new Date().getFullYear()} U'r daily dog
+        <p className="mb-1">
+          понравилось? <a href="https://maxxmoto.github.io/cat-daily/" className="underline hover:text-[#3E2723] transition-colors">кошки ждут вас здесь</a>
+        </p>
+        <p>&copy; {new Date().getFullYear()} U'r daily dog</p>
       </footer>
     </div>
   );
